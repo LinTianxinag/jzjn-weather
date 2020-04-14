@@ -3,8 +3,8 @@
     "url": "mongodb://47.111.155.7:27017/energy"
   },
   "RDS":{
-    "read":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}",
-    "write":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}"
+    "read":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}",
+    "write":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}"
   },
   "MQ":{
     "mode": "ENV",
