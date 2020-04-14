@@ -10,8 +10,8 @@
     },
 
     "RDS":{
-        "read":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}",
-        "write":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}"
+        "read":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}",
+        "write":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}"
     },
 
     "pingxx":{
@@ -24,10 +24,6 @@
         "SecretKey": "qiniu_sk"
     },
 
-    "PLT": "PLT",
-    "PLTID": "569bb92611683bf155119977",
-    "PLTNAME": "古鸽云平台",
-    "PLTAccount": "569bb92611683bf155119976",
 
     "logfile": false,
 
@@ -52,7 +48,7 @@
         "passwd": "",
         "enable": true
     },
-
+    "redis": "redis://:Jzjn2019@47.111.155.7:6379",
     "appservices": {
         "host": "127.0.0.1",
         "port": 10100

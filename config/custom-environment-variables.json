@@ -3,8 +3,8 @@
     "url": "mongodb://47.111.155.7:27017/energy"
   },
   "RDS":{
-    "read":"{\"host\":\"47.111.155.71\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}",
-    "write":"{\"host\":\"47.111.155.71\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"energy\"}"
+    "read":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}",
+    "write":"{\"host\":\"47.111.155.7\",\"port\":3306,\"username\":\"root\",\"password\":\"Jzjn2019\",\"database\":\"testgbk\"}"
   },
   "MQ":{
     "mode": "ENV",
@@ -12,6 +12,7 @@
     "port": "6379",
     "passwd": ""
   },
+  "redis": "redis://:Jzjn2019@47.111.155.7:6379",
   "appservices": {
     "ip": "127.0.0.1"
   },
