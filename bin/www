@@ -103,8 +103,8 @@ server = net.createServer(function(sock){
 
         console.log('data----------');
         console.log(data);
-
-        let key = `${remoteAddress}:${remotePort}`;
+        sock.write('ok');
+        // let key = `${remoteAddress}:${remotePort}`;
 
 
 
