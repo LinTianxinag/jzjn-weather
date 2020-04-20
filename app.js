@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var weatherRouter = require('./routes/weather');
+var net = require('net');
+
 let appRootPath = require('app-root-path');
 let dLoad = require('./libs/dload');
 
@@ -60,5 +62,60 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+var debug = require('debug')('weather:server');
+
+
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port =  '8192';
+app.set('port', port);
+
+
+server = net.createServer(function(sock){
+    //
+    sock.setEncoding('binary');
+    sock.setKeepAlive(true);
+    let remoteAddress = sock.remoteAddress;
+    let remotePort = sock.remotePort;
+
+    sock.on('data', function(data, oldBuffer){
+
+        console.log('data----------');
+        console.log(data);
+        sock.write('ok');
+        // let key = `${remoteAddress}:${remotePort}`;
+
+
+
+
+        //process message
+    });
+
+    sock.on('error', function(exception){
+        // log.debug('sock error ', exception);
+    });
+
+    sock.on('close', function(data){
+
+    });
+
+    sock.on('timeout', ()=>{
+
+    });
+}).listen(port);
+
+server.on('listening',function(){
+    console.log( "server listening on: " + server.address().port);
+});
+server.on('connection', function (socket) {
+    console.log('connection ', socket.remoteAddress+":"+socket.remotePort);
+
+});
+
 
 module.exports = app;
