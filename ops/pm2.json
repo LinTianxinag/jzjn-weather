@@ -1,0 +1,13 @@
+{
+    "apps": [{
+        "name": "charge",
+        "script": "bin/www.js",
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "autorestart" : true,
+        "max_memory_restart" : "300M",
+        "env": {
+            "production": true
+        }
+    }]
+}
+
