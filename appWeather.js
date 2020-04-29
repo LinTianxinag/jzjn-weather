@@ -13,7 +13,7 @@ let appRootPath = require('app-root-path');
 let dLoad = require('./libs/dload');
 
 let log = require(appRootPath.path + '/libs/log')("app");
-var app = express();
+var appWeather = express();
 
 {
   global.MySQL = dLoad('/libs/mysql');
@@ -34,26 +34,26 @@ var app = express();
 MySQL.Load();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+appWeather.set('views', path.join(__dirname, 'views'));
+appWeather.set('view engine', 'ejs');
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+appWeather.use(logger('dev'));
+appWeather.use(express.json());
+appWeather.use(express.urlencoded({ extended: false }));
+appWeather.use(cookieParser());
+appWeather.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/v4', weatherRouter);
+appWeather.use('/', indexRouter);
+appWeather.use('/users', usersRouter);
+appWeather.use('/api/v4', weatherRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+appWeather.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+appWeather.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -73,7 +73,7 @@ var debug = require('debug')('weather:server');
  */
 
 var port =  '8192';
-app.set('port', port);
+appWeather.set('port', port);
 
 
 server = net.createServer(function(sock){
@@ -118,4 +118,4 @@ server.on('connection', function (socket) {
 });
 
 
-module.exports = app;
+module.exports = appWeather;
